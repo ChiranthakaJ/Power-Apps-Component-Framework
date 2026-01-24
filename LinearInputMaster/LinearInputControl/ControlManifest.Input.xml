@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="ModernUI" 
+      constructor="LinearInputControl" 
+      version="1.0.0" 
+      display-name-key="LinearInputControl" 
+      description-key="LinearInputControl description" 
+      control-type="standard">
+   
+   <!-- This element specifies the component value and can contain whole, currency, floating point, or decimal values. -->
+   <!-- For more information: https://learn.microsoft.com/en-us/power-apps/developer/component-framework/implementing-controls-using-typescript?tabs=after#add-properties-for-the-control -->
+   <type-group name="numbers">
+         <type>Whole.None</type>
+         <type>Currency</type>
+         <type>FP</type>
+         <type>Decimal</type>
+   </type-group>
+
+   <!-- This element defines the properties of the code component, such as the data type of the column. -->
+   <!-- For more information: https://learn.microsoft.com/en-us/power-apps/developer/component-framework/implementing-controls-using-typescript?tabs=after#add-properties-for-the-control -->
+   <property name="controlValue"
+         display-name-key="Control Value"
+         description-key="Control value description."
+         of-type-group="numbers"
+         usage="bound"
+         required="true" />
+    <!-- The resources node defines the visualization of the code component. It contains all the resources that build the visualization and styling of the code component. The code is specified as a child element under the resources element. -->
+       <!-- For more information: https://learn.microsoft.com/en-us/power-apps/developer/component-framework/implementing-controls-using-typescript?tabs=after#add-properties-for-the-control -->
+       
+    <property name="Type" 
+          display-name-key="Input Type" 
+          description-key="Select the type of numeric input" 
+          of-type="Enum" 
+          usage="input" 
+          required="true">
+      <value name="Decimal" display-name-key="Decimal">Decimal</value>
+      <value name="Whole" display-name-key="Whole">Whole</value>
+   </property>
+
+    <resources>
+         <code path="index.ts"
+            order="1" />
+         <css path="css/LinearInputControl.css"
+            order="1" />
+    </resources>
+  </control>
+</manifest>

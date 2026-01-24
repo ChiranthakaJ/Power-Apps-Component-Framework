@@ -2,7 +2,7 @@
 <manifest>
   <control namespace="SampleNameSpace" 
      constructor="LinearInputControl" 
-     version="0.0.2" 
+     version="0.0.3" 
      display-name-key="LinearInputControl" 
      description-key="LinearInputControl description" 
      control-type="standard" >
